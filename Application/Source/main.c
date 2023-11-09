@@ -20,6 +20,8 @@ uint8_t key_state[2] = {RESET, RESET};
 
 SimpleProfiler_t profiler;
 
+uint32_t temp_priority;
+
 /**
  * @brief Main function
  * 
@@ -29,7 +31,8 @@ SimpleProfiler_t profiler;
  */
 int main(void)
 {
-	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_2);
+	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_1);
+
     
 	APM_MINI_LEDInit(LED2);
 	APM_MINI_LEDInit(LED3);
@@ -39,6 +42,22 @@ int main(void)
 
 	//APM_DelayInit();
 	systick_config();
+
+	NVIC_EnableIRQRequest(SysTick_IRQn, 1U, 1U);
+
+	NVIC_EnableIRQRequest(SysTick_IRQn, 2U, 2U);
+
+	NVIC_EnableIRQRequest(SysTick_IRQn, 3U, 3U);
+
+
+	temp_priority = NVIC_EncodePriority(6U, 1U, 1U);
+	NVIC_SetPriority(SysTick_IRQn, temp_priority);
+    
+    temp_priority = NVIC_EncodePriority(6U, 2U, 2U);
+	NVIC_SetPriority(SysTick_IRQn, temp_priority);
+    
+    temp_priority = NVIC_EncodePriority(6U, 4U, 3U);
+	NVIC_SetPriority(SysTick_IRQn, temp_priority);
 
 
     while (1)

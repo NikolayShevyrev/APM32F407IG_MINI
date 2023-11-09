@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>APM32F40X,APM32F407_MINI</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Application\Include;..\..\Firmware\APM32F4xx_StdPeriphDriver\Include;..\..\Firmware\CMSIS\Include;..\..\Firmware\CMSIS\Geehy\APM32F4xx\Include;..\..\Board\Include;..\..\Utilities</IncludePath>
+              <IncludePath>..\..\Application\Include;..\..\Firmware\APM32F4xx_StdPeriphDriver\Include;..\..\Firmware\CMSIS\Include;..\..\Firmware\CMSIS\Geehy\APM32F4xx\Include;..\..\Board\Include;..\..\Utilities;..\..\BSP\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -627,6 +627,16 @@
               <FileName>systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Utilities\systick.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Source\bsp_nvic.c</FilePath>
             </File>
           </Files>
         </Group>
