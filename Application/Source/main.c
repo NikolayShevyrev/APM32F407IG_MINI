@@ -10,10 +10,14 @@
 #include "Board.h"
 #include "bsp_delay.h"
 
+#include "simple_profiler.h"
+
 
 /* Private variables ---------------------------------------------------------*/
 uint32_t led_delay = 100;
 uint8_t key_state[2] = {RESET, RESET};
+
+SimpleProfiler_t profiler;
 
 /**
  * @brief Main function
@@ -42,7 +46,9 @@ int main(void)
 		{
 			APM_MINI_LEDToggle(LED3);
 		}
+		simple_profiler_start(&profiler);
 		APM_DelayMs(led_delay);
+		simple_profiler_stop(&profiler);
     }
 }
 

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>APM32F40X,APM32F407_MINI</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Application\Include;..\..\Firmware\APM32F4xx_StdPeriphDriver\Include;..\..\Firmware\CMSIS\Include;..\..\Firmware\CMSIS\Geehy\APM32F4xx\Include;..\..\Board\Include</IncludePath>
+              <IncludePath>..\..\Application\Include;..\..\Firmware\APM32F4xx_StdPeriphDriver\Include;..\..\Firmware\CMSIS\Include;..\..\Firmware\CMSIS\Geehy\APM32F4xx\Include;..\..\Board\Include;..\..\Utilities</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -612,6 +612,16 @@
               <FileName>bsp_key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Board\Source\bsp_key.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Utilities</GroupName>
+          <Files>
+            <File>
+              <FileName>simple_profiler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Utilities\simple_profiler.c</FilePath>
             </File>
           </Files>
         </Group>

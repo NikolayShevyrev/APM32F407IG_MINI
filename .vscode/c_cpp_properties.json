@@ -9,6 +9,7 @@
                 "${workspaceFolder}/Firmware/CMSIS/Include",
                 "${workspaceFolder}/Firmware/CMSIS/Geehy/APM32F4xx/Include",
                 "${workspaceFolder}/Firmware/APM32F4xx_StdPeriphDriver/Include",
+                "${workspaceFolder}/Utilities",
                 "C:/Keil_v5/ARM/ARMCLANG/include"
             ],
             "windowsSdkVersion": "10.0.18362.0",

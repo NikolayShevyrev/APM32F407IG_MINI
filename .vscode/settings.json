@@ -3,6 +3,7 @@
         "board.h": "c",
         "main.h": "c",
         "apm32f4xx.h": "c",
-        "apm32f4xx_int.h": "c"
+        "apm32f4xx_int.h": "c",
+        "simple_profiler.h": "c"
     }
 }
