@@ -26,6 +26,7 @@
 #include "main.h"
 #include "apm32f4xx_int.h"
 #include "bsp_delay.h"
+#include "systick.h"
 
 /** @addtogroup Examples
   @{
@@ -162,6 +163,7 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
 	APM_DelayTickDec();
+	tick_increment();
 }
 
 /**@} end of group Template_INT_Functions */

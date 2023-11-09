@@ -9,6 +9,7 @@
 #include "main.h"
 #include "Board.h"
 #include "bsp_delay.h"
+#include "systick.h"
 
 #include "simple_profiler.h"
 
@@ -28,13 +29,17 @@ SimpleProfiler_t profiler;
  */
 int main(void)
 {
+	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_2);
+    
 	APM_MINI_LEDInit(LED2);
 	APM_MINI_LEDInit(LED3);
 
 	APM_MINI_PBInit(BUTTON_KEY1, BUTTON_MODE_EINT);
 	APM_MINI_PBInit(BUTTON_KEY2, BUTTON_MODE_EINT);
 
-	APM_DelayInit();
+	//APM_DelayInit();
+	systick_config();
+
 
     while (1)
     {
@@ -47,7 +52,8 @@ int main(void)
 			APM_MINI_LEDToggle(LED3);
 		}
 		simple_profiler_start(&profiler);
-		APM_DelayMs(led_delay);
+		//APM_DelayMs(led_delay);
+		delay_1ms(led_delay);
 		simple_profiler_stop(&profiler);
     }
 }

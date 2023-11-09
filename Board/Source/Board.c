@@ -205,9 +205,9 @@ void APM_MINI_PBInit(Button_TypeDef Button, ButtonMode_TypeDef Button_Mode)
         EINT_Config(&EINT_configStruct);
 
         /* Enable and set Button EINT Interrupt to the lowest priority */
-        //NVIC_EnableIRQRequest(BUTTON_IRQn[Button], 0x0f, 0x0f);
-		NVIC_EnableIRQ(BUTTON_IRQn[Button]);
-		NVIC_SetPriority(BUTTON_IRQn[Button], 15U);
+        NVIC_EnableIRQRequest(BUTTON_IRQn[Button], 0x0f, 0x0f);
+		//NVIC_EnableIRQ(BUTTON_IRQn[Button]);
+		//NVIC_SetPriority(BUTTON_IRQn[Button], 15U);
     }
 }
 

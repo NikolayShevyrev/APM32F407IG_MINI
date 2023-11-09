@@ -1,7 +1,7 @@
 /**
- * @file interrupts.c
- * @author Nikolay Shevyrev
- * @brief File containing user interrupt handlers
+ * @file    interrupts.c
+ * @author  Nikolay Shevyrev
+ * @brief   User Interrupt Handlers
  */
 
 
@@ -9,6 +9,7 @@
 #include "main.h"
 #include "Board.h"
 #include "bsp_delay.h"
+#include "systick.h"
 
 
 /* Private variables ---------------------------------------------------------*/
@@ -38,7 +39,7 @@ void EINT0_IRQHandler(void)
         }
 
         /* Debounce delay */
-        APM_DelayMs(10);
+        delay_1ms(10);
 
         /*Clear EINT_LINE0 interrupt flag*/
         EINT_ClearIntFlag(EINT_LINE_0);
@@ -69,7 +70,7 @@ void EINT1_IRQHandler(void)
         }
 
         /* Debounce delay */
-        APM_DelayMs(10);
+        delay_1ms(10);
 
         /*Clear EINT_LINE0 interrupt flag*/
         EINT_ClearIntFlag(EINT_LINE_1);

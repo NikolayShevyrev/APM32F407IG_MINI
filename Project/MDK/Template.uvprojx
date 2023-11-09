@@ -623,6 +623,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\Utilities\simple_profiler.c</FilePath>
             </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Utilities\systick.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
