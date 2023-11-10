@@ -19,7 +19,7 @@
 
 
 /* Private defines -----------------------------------------------------------*/
-#define BSP_NVIC_PRIORITY_GROUP     NVIC_PRIORITY_GROUP_2
+#define BSP_NVIC_PRIORITY_GROUP     NVIC_PRIORITY_GROUP_4
 
 
 /* Private function prototypes -----------------------------------------------*/

@@ -86,12 +86,18 @@
   @{
 */
 
+/*** Chip version  ***/
+#define __CHIP_VERSION                 0xA     // A or C
 /** Core revision r0p1 */
 #define __CM4_REV                      0x0001
 /** APM32 devices provides an MPU */
 #define __MPU_PRESENT                  1
 /** APM32 uses 4 Bits for the Priority Levels  */
-#define __NVIC_PRIO_BITS               4
+#if defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xA)
+    #define __NVIC_PRIO_BITS               3
+#elif defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xC)
+    #define __NVIC_PRIO_BITS               4
+#endif
 /** Set to 1 if different SysTick Config is used */
 #define __Vendor_SysTickConfig         0
 /** APM32 devices provides an FPU */

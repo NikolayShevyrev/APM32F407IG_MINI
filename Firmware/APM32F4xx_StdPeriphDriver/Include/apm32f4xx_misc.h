@@ -69,14 +69,24 @@ typedef enum
 /**
  * @brief NVIC priority group
  */
-typedef enum
-{
-    NVIC_PRIORITY_GROUP_0 = 0x700,  /*!< 0 bits for pre-emption priority,4 bits for subpriority */
-    NVIC_PRIORITY_GROUP_1 = 0x600,  /*!< 1 bits for pre-emption priority,3 bits for subpriority */
-    NVIC_PRIORITY_GROUP_2 = 0x500,  /*!< 2 bits for pre-emption priority,2 bits for subpriority */
-    NVIC_PRIORITY_GROUP_3 = 0x400,  /*!< 3 bits for pre-emption priority,1 bits for subpriority */
-    NVIC_PRIORITY_GROUP_4 = 0x300   /*!< 4 bits for pre-emption priority,0 bits for subpriority */
-} NVIC_PRIORITY_GROUP_T;
+#if defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xA)
+    typedef enum
+	{
+		NVIC_PRIORITY_GROUP_7 = 0x700,  /*!< 0 bits for pre-emption priority,3 bits for subpriority */
+		NVIC_PRIORITY_GROUP_6 = 0x600,  /*!< 1 bits for pre-emption priority,2 bits for subpriority */
+		NVIC_PRIORITY_GROUP_5 = 0x500,  /*!< 2 bits for pre-emption priority,1 bits for subpriority */
+		NVIC_PRIORITY_GROUP_4 = 0x400,  /*!< 3 bits for pre-emption priority,0 bits for subpriority */
+	} NVIC_PRIORITY_GROUP_T;
+#elif defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xC)
+    typedef enum
+	{
+		NVIC_PRIORITY_GROUP_7 = 0x700,  /*!< 0 bits for pre-emption priority,4 bits for subpriority */
+		NVIC_PRIORITY_GROUP_6 = 0x600,  /*!< 1 bits for pre-emption priority,3 bits for subpriority */
+		NVIC_PRIORITY_GROUP_5 = 0x500,  /*!< 2 bits for pre-emption priority,2 bits for subpriority */
+		NVIC_PRIORITY_GROUP_4 = 0x400,  /*!< 3 bits for pre-emption priority,1 bits for subpriority */
+		NVIC_PRIORITY_GROUP_3 = 0x300   /*!< 4 bits for pre-emption priority,0 bits for subpriority */
+	} NVIC_PRIORITY_GROUP_T;
+#endif
 
 /**
  * @brief SysTick Clock source

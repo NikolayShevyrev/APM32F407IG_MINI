@@ -82,6 +82,7 @@ void NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_T priorityGroup)
  *
  * @retval    None
  */
+#if defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xA)
 void NVIC_EnableIRQRequest(IRQn_Type irq, uint8_t preemptionPriority, uint8_t subPriority)
 {
     uint32_t tempPriority, tempPrePri, tempSubPri;
@@ -93,33 +94,82 @@ void NVIC_EnableIRQRequest(IRQn_Type irq, uint8_t preemptionPriority, uint8_t su
     /* get pre-emption priority and subpriority */
     switch(priorityGrp)
     {
-        case NVIC_PRIORITY_GROUP_0:
+        case NVIC_PRIORITY_GROUP_7:
             tempPrePri = 0;
-            tempSubPri = 4;
-            break;
-
-        case NVIC_PRIORITY_GROUP_1:
-            tempPrePri = 1;
             tempSubPri = 3;
             break;
 
-        case NVIC_PRIORITY_GROUP_2:
-            tempPrePri = 2;
+        case NVIC_PRIORITY_GROUP_6:
+            tempPrePri = 1;
             tempSubPri = 2;
             break;
 
-        case NVIC_PRIORITY_GROUP_3:
-            tempPrePri = 3;
+        case NVIC_PRIORITY_GROUP_5:
+            tempPrePri = 2;
             tempSubPri = 1;
             break;
 
         case NVIC_PRIORITY_GROUP_4:
+            tempPrePri = 3;
+            tempSubPri = 0;
+            break;
+
+        default:
+            NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_7);
+            tempPrePri = 0;
+            tempSubPri = 3;
+            break;
+    }
+
+    tempPrePri = 3 - tempPrePri;
+    tempSubPri = 3 - tempSubPri;
+    tempPriority = preemptionPriority << tempPrePri;
+    tempPriority |= subPriority & (0x0f >> tempSubPri);
+    tempPriority <<= 5;
+    NVIC->IP[irq] = (uint8_t)tempPriority;
+
+    /* enable the selected IRQ */
+    NVIC->ISER[irq >> 0x05U] = (uint32_t)0x01U << (irq & (uint8_t)0x1FU);
+}
+#elif defined (__CHIP_VERSION) && (__CHIP_VERSION == 0xC)
+void NVIC_EnableIRQRequest(IRQn_Type irq, uint8_t preemptionPriority, uint8_t subPriority)
+{
+    uint32_t tempPriority, tempPrePri, tempSubPri;
+    uint32_t priorityGrp;
+
+    /* Get priority group */
+    priorityGrp = (SCB->AIRCR) & (uint32_t)0x700U;
+
+    /* get pre-emption priority and subpriority */
+    switch(priorityGrp)
+    {
+        case NVIC_PRIORITY_GROUP_7:
+            tempPrePri = 0;
+            tempSubPri = 4;
+            break;
+
+        case NVIC_PRIORITY_GROUP_6:
+            tempPrePri = 1;
+            tempSubPri = 3;
+            break;
+
+        case NVIC_PRIORITY_GROUP_5:
+            tempPrePri = 2;
+            tempSubPri = 2;
+            break;
+
+        case NVIC_PRIORITY_GROUP_4:
+            tempPrePri = 3;
+            tempSubPri = 1;
+            break;
+
+        case NVIC_PRIORITY_GROUP_3:
             tempPrePri = 4;
             tempSubPri = 0;
             break;
 
         default:
-            NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_0);
+            NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_7);
             tempPrePri = 0;
             tempSubPri = 4;
             break;
@@ -131,10 +181,13 @@ void NVIC_EnableIRQRequest(IRQn_Type irq, uint8_t preemptionPriority, uint8_t su
     tempPriority |= subPriority & (0x0f >> tempSubPri);
     tempPriority <<= 4;
     NVIC->IP[irq] = (uint8_t)tempPriority;
+    //NVIC_SetPriority(irq, tempPriority);
 
     /* enable the selected IRQ */
     NVIC->ISER[irq >> 0x05U] = (uint32_t)0x01U << (irq & (uint8_t)0x1FU);
 }
+#endif
+
 
 /*!
  * @brief     Disable NVIC request

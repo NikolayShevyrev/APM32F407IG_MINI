@@ -31,33 +31,39 @@ uint32_t temp_priority;
  */
 int main(void)
 {
-	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_1);
+	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_4);
 
     
 	APM_MINI_LEDInit(LED2);
 	APM_MINI_LEDInit(LED3);
 
-	APM_MINI_PBInit(BUTTON_KEY1, BUTTON_MODE_EINT);
-	APM_MINI_PBInit(BUTTON_KEY2, BUTTON_MODE_EINT);
+	//APM_MINI_PBInit(BUTTON_KEY1, BUTTON_MODE_EINT);
+	//APM_MINI_PBInit(BUTTON_KEY2, BUTTON_MODE_EINT);
 
 	//APM_DelayInit();
 	systick_config();
 
-	NVIC_EnableIRQRequest(SysTick_IRQn, 1U, 1U);
+	NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_4);
 
-	NVIC_EnableIRQRequest(SysTick_IRQn, 2U, 2U);
+	NVIC_EnableIRQRequest(EINT2_IRQn, 2U, 0U);
 
-	NVIC_EnableIRQRequest(SysTick_IRQn, 3U, 3U);
+	NVIC_EnableIRQRequest(EINT2_IRQn, 4U, 0U);
 
+	NVIC_EnableIRQRequest(EINT2_IRQn, 7U, 0U);
 
-	temp_priority = NVIC_EncodePriority(6U, 1U, 1U);
-	NVIC_SetPriority(SysTick_IRQn, temp_priority);
+	NVIC_EnableIRQRequest(EINT2_IRQn, 10U, 0U);
+
+	temp_priority = NVIC_EncodePriority(4U, 2U, 0U);
+	NVIC_SetPriority(EINT2_IRQn, temp_priority);
     
-    temp_priority = NVIC_EncodePriority(6U, 2U, 2U);
-	NVIC_SetPriority(SysTick_IRQn, temp_priority);
+    temp_priority = NVIC_EncodePriority(4U, 4U, 0U);
+	NVIC_SetPriority(EINT2_IRQn, temp_priority);
     
-    temp_priority = NVIC_EncodePriority(6U, 4U, 3U);
-	NVIC_SetPriority(SysTick_IRQn, temp_priority);
+    temp_priority = NVIC_EncodePriority(4U, 7U, 0U);
+	NVIC_SetPriority(EINT2_IRQn, temp_priority);
+
+	temp_priority = NVIC_EncodePriority(4U, 10U, 0U);
+	NVIC_SetPriority(EINT2_IRQn, temp_priority);
 
 
     while (1)
