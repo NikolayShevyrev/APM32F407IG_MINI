@@ -42,6 +42,8 @@
 #include "apm32f4xx_dma.h"
 #include "apm32f4Xx_sdio.h"
 #include "apm32f4xx_dci.h"
+#include "apm32f4xx_tmr.h"
+
 
 /** @addtogroup Board
   @{

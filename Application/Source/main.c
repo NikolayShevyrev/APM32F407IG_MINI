@@ -47,7 +47,7 @@ int main(void)
 
 	NVIC_EnableIRQRequest(EINT2_IRQn, 2U, 0U);
 
-	NVIC_EnableIRQRequest(EINT2_IRQn, 4U, 0U);
+	NVIC_EnableIRQRequest(EINT2_IRQn, 4U, 7U);
 
 	NVIC_EnableIRQRequest(EINT2_IRQn, 7U, 0U);
 

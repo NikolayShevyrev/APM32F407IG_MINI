@@ -9220,6 +9220,10 @@ typedef struct
 #define BIT30                   ((uint32_t)0x40000000)
 #define BIT31                   ((uint32_t)0x80000000)
 
+#define BIT(x)                       ((uint32_t)((uint32_t)0x01U<<(x)))
+
+#define BITS(start, end)             ((0xFFFFFFFFUL << (start)) & (0xFFFFFFFFUL >> (31U - (uint32_t)(end)))) 
+
 #define SET_BIT(REG, BIT)       ((REG) |= (BIT))
 
 #define CLEAR_BIT(REG, BIT)     ((REG) &= ~(BIT))
