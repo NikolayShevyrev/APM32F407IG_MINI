@@ -40,15 +40,9 @@ int main(void)
 	APM_MINI_PBInit(BUTTON_KEY1, BUTTON_MODE_EINT);
 	APM_MINI_PBInit(BUTTON_KEY2, BUTTON_MODE_EINT);
 
-	systick_config();
-
     while (1)
     {
-		if (key_state[BUTTON_KEY2] == SET)
-		{
-			APM_MINI_LEDToggle(LED3);
-		}
-		delay_1ms(led_delay);
+		/* CODE */
     }
 }
 

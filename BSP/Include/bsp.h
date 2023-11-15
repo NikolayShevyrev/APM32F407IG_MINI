@@ -16,6 +16,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+#include "bsp_defines.h"
 #include "bsp_nvic.h"
 #include "bsp_gpio.h"
 #include "bsp_timer.h"

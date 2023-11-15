@@ -25,8 +25,6 @@
 /* Private function prototypes -----------------------------------------------*/
 void bsp_nvic_config(void);
 
-void bsp_nvic_irq_enable(IRQn_Type irq, uint8_t priority, uint8_t subpriority);
-
 
 #ifdef __cplusplus
 }

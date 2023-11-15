@@ -8,12 +8,28 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "Board.h"
+#include "bsp.h"
 #include "bsp_delay.h"
 #include "systick.h"
 
 
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t key_state[];
+
+
+/**
+ * @brief PWM Timer 1 Update Interrupt Handler
+ * 
+ * @param[in]   none
+ * @param[out]  none
+ * @return      none
+ */
+void PWM_IRQHandler(void)
+{
+    APM_MINI_LEDToggle(LED3);
+
+    TMR_ClearIntFlag(PWM_TIMER, TMR_INT_UPDATE);
+}
 
 
 /*!

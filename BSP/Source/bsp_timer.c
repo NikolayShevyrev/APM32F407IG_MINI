@@ -54,6 +54,9 @@ void bsp_timer1_config(void)
 
     TMR_ConfigOC1Preload(PWM_TIMER, TMR_OC_PRELOAD_ENABLE);
     TMR_EnableAutoReload(PWM_TIMER);
+
+    TMR_EnableInterrupt(PWM_TIMER, TMR_INT_UPDATE);
+
     TMR_Enable(PWM_TIMER);
     TMR_EnablePWMOutputs(PWM_TIMER);
 }

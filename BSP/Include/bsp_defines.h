@@ -22,7 +22,7 @@
 #define DEFAULT_PWM_FREQ        10000U
 
 /* Interrupt Priorities */
-#define PWM_TIMER_INT_PRIORITY  1U
+#define PWM_TIMER_INT_PRIORITY  2U
 
 /* PWM Outputs and Timer */
 #define PWM_TIMER       TMR1
