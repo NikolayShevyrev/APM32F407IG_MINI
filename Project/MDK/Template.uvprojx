@@ -638,6 +638,21 @@
               <FileType>1</FileType>
               <FilePath>..\..\BSP\Source\bsp_nvic.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Source\bsp_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Source\bsp_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Source\bsp.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

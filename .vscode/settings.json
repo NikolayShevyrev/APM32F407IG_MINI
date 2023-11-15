@@ -6,6 +6,7 @@
         "apm32f4xx_int.h": "c",
         "simple_profiler.h": "c",
         "apm32f4xx_misc.h": "c",
-        "apm32f4xx_rcm.h": "c"
+        "apm32f4xx_rcm.h": "c",
+        "apm32f4xx_tmr.h": "c"
     }
 }

@@ -84,7 +84,13 @@ void tick_increment(void)
 }
 
 
-
+/**
+ * @brief Toggle HeartBeat Led
+ * 
+ * @param[in]   none
+ * @param[out]  none
+ * @return      none
+ */
 void heart_beat_led(void)
 {
     static uint32_t count = 0;

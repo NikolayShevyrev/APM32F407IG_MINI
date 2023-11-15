@@ -40,3 +40,4 @@ void bsp_gpio_config(void)
     GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
     GPIO_Config(PWM_PORT, &GPIO_ConfigStruct);
 }
+

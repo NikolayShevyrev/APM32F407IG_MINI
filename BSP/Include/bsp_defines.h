@@ -29,6 +29,8 @@
 #define PWM_IRQn        TMR1_UP_TMR10_IRQn 
 #define PWM_IRQHandler  TMR1_UP_TMR10_IRQHandler
 
+#define PWM_TIMER_RCM   RCM_APB2_PERIPH_TMR1
+
 #define PWM_CH_U        TMR_CHANNEL_1
 #define PWM_CH_V	    TMR_CHANNEL_2
 #define PWM_CH_W	    TMR_CHANNEL_3
@@ -63,3 +65,6 @@
 #endif
 
 #endif /* BSP_DEFINES_H */
+
+
+

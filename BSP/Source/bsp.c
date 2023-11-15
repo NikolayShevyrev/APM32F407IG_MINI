@@ -22,8 +22,9 @@ void bsp_config()
 {
     SystemCoreClockUpdate();
 
-    /*!< 3 bits for pre-emption priority,0 bits for subpriority */
-    NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_4); 
+    NVIC_ConfigPriorityGroup(NVIC_PRIORITY_GROUP_4);  /* Preprio: 3 bits, Subprio: 0 bits */
 
     bsp_gpio_config();
+    bsp_timer1_config();
 }
+
