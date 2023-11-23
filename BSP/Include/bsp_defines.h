@@ -60,6 +60,34 @@
 #define PWM_PINS        BITS(8,13)
 
 
+/* Can 1 */
+#define CAN_PORT_RCM    RCM_AHB1_PERIPH_GPIOB
+
+#define CAN1_PORT       GPIOB
+
+#define CAN1_RX_PIN     GPIO_PIN_8
+#define CAN1_TX_PIN     GPIO_PIN_9
+#define CAN1_PINS       BITS(8,9)
+
+#define CAN1_AF         GPIO_AF_CAN1
+
+#define CAN1_RX_PIN_SOURCE   GPIO_PIN_SOURCE_8
+#define CAN1_TX_PIN_SOURCE   GPIO_PIN_SOURCE_9
+
+/* Can 2 */
+#define CAN2_PORT       GPIOB
+
+#define CAN2_RX_PIN     GPIO_PIN_5
+#define CAN2_TX_PIN     GPIO_PIN_6
+#define CAN2_PINS       BITS(5,6)
+
+#define CAN2_AF         GPIO_AF_CAN2
+
+#define CAN2_RX_PIN_SOURCE   GPIO_PIN_SOURCE_5
+#define CAN2_TX_PIN_SOURCE   GPIO_PIN_SOURCE_6
+
+
+
 #ifdef __cplusplus
 }
 #endif

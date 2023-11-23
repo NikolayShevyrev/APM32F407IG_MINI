@@ -47,7 +47,7 @@ void EINT0_IRQHandler(void)
         //APM_LEDToggle(LED2);
         if (key_state[BUTTON_KEY2] == SET)
         {
-             key_state[BUTTON_KEY2] = RESET;
+            key_state[BUTTON_KEY2] = RESET;
         }
         else
         {
