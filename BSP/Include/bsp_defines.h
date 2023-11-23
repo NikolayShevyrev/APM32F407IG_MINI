@@ -62,6 +62,7 @@
 
 /* Can 1 */
 #define CAN_PORT_RCM    RCM_AHB1_PERIPH_GPIOB
+#define CAN1_RCM        RCM_APB1_PERIPH_CAN1
 
 #define CAN1_PORT       GPIOB
 
@@ -75,6 +76,8 @@
 #define CAN1_TX_PIN_SOURCE   GPIO_PIN_SOURCE_9
 
 /* Can 2 */
+#define CAN2_RCM        RCM_APB1_PERIPH_CAN1
+
 #define CAN2_PORT       GPIOB
 
 #define CAN2_RX_PIN     GPIO_PIN_5

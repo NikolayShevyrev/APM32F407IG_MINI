@@ -43,26 +43,26 @@ void bsp_gpio_config(void)
     GPIO_Config(PWM_PORT, &GPIO_ConfigStruct);
 
     /* CAN Bus */
-    RCM_EnableAHB1PeriphClock(RCM_AHB1_PERIPH_GPIOB);
+    // RCM_EnableAHB1PeriphClock(RCM_AHB1_PERIPH_GPIOB);
 
-    GPIO_ConfigPinAF(CAN1_PORT, CAN1_RX_PIN_SOURCE, CAN1_AF);
-    GPIO_ConfigPinAF(CAN1_PORT, CAN1_TX_PIN_SOURCE, CAN1_AF);
+    // GPIO_ConfigPinAF(CAN1_PORT, CAN1_RX_PIN_SOURCE, CAN1_AF);
+    // GPIO_ConfigPinAF(CAN1_PORT, CAN1_TX_PIN_SOURCE, CAN1_AF);
 
-    GPIO_ConfigStruct.pin   = CAN1_PINS;
-    GPIO_ConfigStruct.mode  = GPIO_MODE_AF;
-    GPIO_ConfigStruct.otype = GPIO_OTYPE_PP;
-    GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
-    GPIO_ConfigStruct.otype = GPIO_PUPD_UP;
-    GPIO_Config(CAN1_PORT, &GPIO_ConfigStruct);
+    // GPIO_ConfigStruct.pin   = CAN1_PINS;
+    // GPIO_ConfigStruct.mode  = GPIO_MODE_AF;
+    // GPIO_ConfigStruct.otype = GPIO_OTYPE_PP;
+    // GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
+    // GPIO_ConfigStruct.otype = GPIO_PUPD_UP;
+    // GPIO_Config(CAN1_PORT, &GPIO_ConfigStruct);
 
-    GPIO_ConfigPinAF(CAN2_PORT, CAN2_RX_PIN_SOURCE, CAN2_AF);
-    GPIO_ConfigPinAF(CAN2_PORT, CAN2_TX_PIN_SOURCE, CAN2_AF);
+    // GPIO_ConfigPinAF(CAN2_PORT, CAN2_RX_PIN_SOURCE, CAN2_AF);
+    // GPIO_ConfigPinAF(CAN2_PORT, CAN2_TX_PIN_SOURCE, CAN2_AF);
 
-    GPIO_ConfigStruct.pin   = CAN2_PINS;
-    GPIO_ConfigStruct.mode  = GPIO_MODE_AF;
-    GPIO_ConfigStruct.otype = GPIO_OTYPE_PP;
-    GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
-    GPIO_ConfigStruct.otype = GPIO_PUPD_UP;
-    GPIO_Config(CAN2_PORT, &GPIO_ConfigStruct);
+    // GPIO_ConfigStruct.pin   = CAN2_PINS;
+    // GPIO_ConfigStruct.mode  = GPIO_MODE_AF;
+    // GPIO_ConfigStruct.otype = GPIO_OTYPE_PP;
+    // GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
+    // GPIO_ConfigStruct.otype = GPIO_PUPD_UP;
+    // GPIO_Config(CAN2_PORT, &GPIO_ConfigStruct);
 }
 

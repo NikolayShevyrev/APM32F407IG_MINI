@@ -19,7 +19,7 @@
 
 
 /* Private function prototypes -----------------------------------------------*/
-
+void can_loopback_config(CAN_T * can_base);
 
 
 #ifdef __cplusplus

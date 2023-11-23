@@ -43,6 +43,7 @@
 #include "apm32f4Xx_sdio.h"
 #include "apm32f4xx_dci.h"
 #include "apm32f4xx_tmr.h"
+#include "apm32f4xx_can.h"
 
 
 /** @addtogroup Board
