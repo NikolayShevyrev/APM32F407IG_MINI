@@ -1,36 +1,32 @@
 /**
- * @file    bsp.h
+ * @file    bsp_spi.h
  * @author  Nikolay Shevyrev
- * @brief   Header for bsp.c
+ * @brief   Header for bsp_spi.c
  * @ingroup BSP
  */
 
 
-#ifndef BSP_H
-#define BSP_H
+#ifndef BSP_SPI_H
+#define BSP_SPI_H
 
 #ifdef __cplusplus
  extern "C" {
 #endif
 
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-#include "bsp_defines.h"
-#include "bsp_nvic.h"
-#include "bsp_gpio.h"
-#include "bsp_timer.h"
-#include "bsp_spi.h"
-#include "systick.h"
-
 
 /* Private function prototypes -----------------------------------------------*/
-void bsp_config(void);
+void bsp_spi_config(void);
+
+void bsp_spi_gpios_config(void);
 
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* BSP_H */
+#endif /* BSP_SPI_H */
 

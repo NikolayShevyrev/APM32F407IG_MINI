@@ -25,7 +25,11 @@ void bsp_config()
     systick_config();
 
     bsp_nvic_config();
+    
     bsp_gpio_config();
+
     bsp_timer1_config();
+
+    bsp_spi_config();
 }
 

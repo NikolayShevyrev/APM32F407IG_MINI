@@ -9,7 +9,6 @@
 #include "main.h"
 #include "Board.h"
 #include "bsp_delay.h"
-#include "systick.h"
 #include "bsp.h"
 
 #include "simple_profiler.h"

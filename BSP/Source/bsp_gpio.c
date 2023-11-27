@@ -24,6 +24,8 @@ void bsp_gpio_config(void)
     GPIO_Config_T GPIO_ConfigStruct;
     GPIO_ConfigStructInit(&GPIO_ConfigStruct);
 
+    RCM_EnableAPB2PeriphClock(RCM_APB2_PERIPH_SYSCFG);
+
     /* PWM Outputs */
     RCM_EnableAHB1PeriphClock(PWM_PORT_RCM);
 
@@ -39,7 +41,7 @@ void bsp_gpio_config(void)
     GPIO_ConfigStruct.mode  = GPIO_MODE_AF;
     GPIO_ConfigStruct.otype = GPIO_OTYPE_PP;
     GPIO_ConfigStruct.speed = GPIO_SPEED_100MHz;
-    GPIO_ConfigStruct.otype = GPIO_PUPD_NOPULL;
+    GPIO_ConfigStruct.pupd  = GPIO_PUPD_NOPULL;
     GPIO_Config(PWM_PORT, &GPIO_ConfigStruct);
 
     /* CAN Bus */

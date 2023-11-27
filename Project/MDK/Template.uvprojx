@@ -653,6 +653,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\BSP\Source\bsp.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Source\bsp_spi.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
